@@ -7,10 +7,20 @@ const app = express();
 const PORT = 3012;
 
 app.get("/publicKeyHash", (req, res) => {
+  const domain = req.query.domain as string;
+
+  if (!domain) {
+    res.status(400).json({
+      data: false,
+      meta: { code: 400, message: "Missing domain query parameter" },
+    });
+    return;
+  }
+
   const options = {
-    host: "mbg-fleet-management.cudo.co.id",
+    host: domain,
     port: 443,
-    servername: "mbg-fleet-management.cudo.co.id",
+    servername: domain,
   };
 
   const socket = tls.connect(options, () => {
