@@ -14,20 +14,20 @@ An Express-based API to retrieve the SHA-256 hash of a website's public key from
 
 ```sh
 # Clone the repository
-git clone https://github.com/yourusername/express-public-key-hash.git
+git clone https://github.com/anggaprytn/public-key-hasher.git
 
 # Navigate to the project directory
-cd express-public-key-hash
+cd public-key-hasher
 
 # Install dependencies
-npm install
+bun install
 ```
 
 ## ▶️ Usage
 
 ### Start the Server
 ```sh
-npm start
+bun start
 ```
 The server will run on **http://localhost:3012** by default.
 
